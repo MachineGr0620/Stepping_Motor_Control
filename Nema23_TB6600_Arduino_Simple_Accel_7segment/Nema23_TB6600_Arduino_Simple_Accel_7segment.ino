@@ -24,7 +24,7 @@ uint8_t data[] = {0, 0, 0, 0};
 #define StepPin 3
 #define EnaPin 4
 //////// MotorInterfaceType {  FUNCTION = 0, DRIVER = 1, FULL2WIRE = 2,
-///FULL3WIRE = 3,FULL4WIRE = 4, HALF3WIRE = 6, HALF4WIRE = 8}
+/// FULL3WIRE = 3,FULL4WIRE = 4, HALF3WIRE = 6, HALF4WIRE = 8}
 #define motorInterfaceType 1
 
 //////// Create a new instance of the AccelStepper class:
@@ -37,10 +37,10 @@ const int enter_pin = 11;
 const int plus_pin = 12;
 const int minus_pin = 13;
 
-volatile long int count;        // rotation number
-volatile long int i = 4;        // array index
-volatile long int i_lim = 7;    // array index limit
-uint8_t nejiri[] = {3, 4, 6, 8, 12, 16, 23, 33};// yori-number:JIS C 3216-5／巻線の電気特性
+volatile long int count;     // rotation number
+volatile long int i = 4;     // array index
+volatile long int i_lim = 7; // array index limit
+uint8_t nejiri[] = {3,  4,  6,  8,12, 16, 23, 33}; // yori-number:JIS C 3216-5／巻線の電気特性
 
 void setup() {
   Serial.begin(9600);
@@ -53,7 +53,19 @@ void setup() {
   pinMode(plus_pin, INPUT_PULLUP);
   pinMode(minus_pin, INPUT_PULLUP);
 
-  //////// Set the number of revolutions. Execute when you press the enter button.
+  count = nejiri[i];
+  //////// Show on the display
+  data[3] = display.encodeDigit(count / 1 % 10);
+  data[2] = display.encodeDigit(count / 10 % 10);
+  data[1] = display.encodeDigit(count / 100 % 10);
+  data[0] = display.encodeDigit(count / 1000 % 10);
+
+  display.setBrightness(7); // Brightness:0~7
+  display.setSegments(data);
+  delay(50);
+
+  //////// Set the number of revolutions. Execute when you press the enter
+  ///button.
   while (digitalRead(enter_pin) != LOW) {
 
     if (digitalRead(plus_pin) == LOW) {
@@ -70,7 +82,7 @@ void setup() {
       }
       delay(200);
     }
-    
+
     count = nejiri[i];
     //////// Show on the display
     data[3] = display.encodeDigit(count / 1 % 10);
@@ -78,7 +90,7 @@ void setup() {
     data[1] = display.encodeDigit(count / 100 % 10);
     data[0] = display.encodeDigit(count / 1000 % 10);
 
-    display.setBrightness(7);//Brightness:0~7
+    display.setBrightness(7); // Brightness:0~7
     display.setSegments(data);
     delay(50);
     display.setBrightness(2);
@@ -91,7 +103,7 @@ void setup() {
 
 //************************************************************************************/
 void loop() {
-  
+
   Serial.println("Start");
 
   stepper.setMaxSpeed(3000);
@@ -104,9 +116,12 @@ void loop() {
   delay(500);
 
   // stepper.moveTo(0); // Return to zero
-  stepper.setCurrentPosition(0); // The current location is set to 0, and without this, it does not
-          // move continuously = it is recognized that it is already in the
-          // moveTo position.
+  
+  /*The current location is set to 0, and without this, it does not
+  move continuously = it is recognized that it is already in the
+  moveTo position.*/
+  stepper.setCurrentPosition(0); 
+
 
   ///////////// Wait until the START button is pressed
   while (digitalRead(enter_pin) != LOW) {
