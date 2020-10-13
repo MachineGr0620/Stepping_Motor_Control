@@ -1,12 +1,10 @@
 # Stepping_Motor_Control
 ## Stepping-Motor  
-Nema23/23HS2430 57x112  
-[AMAZON](https://www.amazon.co.jp/gp/product/B07HQHXGJF/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1)  
+Nema23/23HS2430 57x112 [AMAZON](https://www.amazon.co.jp/gp/product/B07HQHXGJF/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1)  
 スペック等: https://cdn-reichelt.de/documents/datenblatt/C300/23HS2430.pdf
 
 ## Motor-Driver  
-TB6600 ステッピングモータードライバー  
-[AMAZON](https://www.amazon.co.jp/gp/product/B06XSBB45M/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1)  
+TB6600 ステッピングモータードライバー [AMAZON](https://www.amazon.co.jp/gp/product/B06XSBB45M/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1)  
 配線例など: http://makerhardware.net/wiki/doku.php?id=electronics:tb6600_stepper_motor_driver  
 マニュアル: https://www.makerguides.com/wp-content/uploads/2019/10/TB6600-Manual.pdf  
 
