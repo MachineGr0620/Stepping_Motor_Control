@@ -1,4 +1,5 @@
-# Stepping_Motor_Control
+# Stepping_Motor_Control  
+#てｓるとおおお
 ## Stepping-Motor  
 Nema23/23HS2430 57x112 [AMAZON](https://www.amazon.co.jp/gp/product/B07HQHXGJF/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1)  
 スペック等: https://cdn-reichelt.de/documents/datenblatt/C300/23HS2430.pdf
