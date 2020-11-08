@@ -5850,4 +5850,6 @@ Text Notes 5350 650  0    50   ~ 10
 TB6600 Motor-driver & Nema23 Stepping-Motor
 Text Notes 7250 1950 0    50   ~ 0
 red : A+\ngreen : A-\nyellow : B+\nblue : B-
+Text Notes 5950 1000 0    31   ~ 0
+The direction of motor rotation can be reversed by \nreversing the DIR to +/-. Convenient \nwhen you don't want to loosen it because it consists of a right-hand thread.
 $EndSCHEMATC
