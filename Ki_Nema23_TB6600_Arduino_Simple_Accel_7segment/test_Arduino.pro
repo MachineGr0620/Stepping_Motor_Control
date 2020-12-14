@@ -1,4 +1,4 @@
-update=2020/10/12 16:31:34
+update=2020/11/08 23:20:44
 version=1
 last_client=eeschema
 [pcbnew]

@@ -5848,4 +5848,6 @@ Text Notes 9300 4050 0    50   ~ 10
 TM167 7segment module
 Text Notes 5350 650  0    50   ~ 10
 TB6600 Motor-driver & Nema23 Stepping-Motor
+Text Notes 7250 1950 0    50   ~ 0
+red : A+\ngreen : A-\nyellow : B+\nblue : B-
 $EndSCHEMATC
